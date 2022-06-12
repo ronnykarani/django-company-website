@@ -1,7 +1,10 @@
 {% load static %}
 <!-- Back to top button -->
 <div class="back-to-top"></div>
+
+
 <header>
+    <!-- Top-bar -->
     <div class="top-bar">
       <div class="container">
         <div class="row align-items-center">
@@ -22,12 +25,14 @@
             </div>
           </div>
         </div>
-      </div> <!-- .container -->
-    </div> <!-- .top-bar -->
+      </div> 
+    </div> 
+    <!-- Top-bar -->
 
+    <!-- Nav-bar -->
     <nav class="navbar navbar-expand-lg navbar-light">
       <div class="container">
-        <a href="index.html" class="navbar-brand">Reve<span class="text-primary">Tive.</span></a>
+        <a href="index.html" class="navbar-brand">💻 Rak<span class="text-primary">net</span></a>
 
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -36,56 +41,21 @@
         <div class="navbar-collapse collapse" id="navbarContent">
           <ul class="navbar-nav ml-auto pt-3 pt-lg-0">
             <li class="nav-item active">
-              <a href="index.html" class="nav-link">Home</a>
+              <a href="{% url 'home' %}" class="nav-link">Home</a>
             </li>
-            <li class="nav-item">
-              <a href="about.html" class="nav-link">About</a>
-            </li>
-            <li class="nav-item">
-              <a href="services.html" class="nav-link">Services</a>
-            </li>
+            
             <li class="nav-item">
               <a href="portfolio.html" class="nav-link">Projects</a>
             </li>
             <li class="nav-item">
-              <a href="blog.html" class="nav-link">News</a>
+              <a href="blog.html" class="nav-link">Blog</a>
             </li>
             <li class="nav-item">
-              <a href="contact.html" class="nav-link">Contact</a>
+              <a href="{% url 'contact' %}" class="nav-link">Contact</a>
             </li>
           </ul>
         </div>
       </div> <!-- .container -->
     </nav> <!-- .navbar -->
 
-    <div class="page-banner home-banner mb-5">
-      <div class="slider-wrapper">
-        <div class="owl-carousel hero-carousel">
-          <div class="hero-carousel-item">
-            <img src="{% static 'img/bg_image_1.jpg' %}" alt="">
-            <div class="img-caption">
-              <div class="subhead">We're design studio believe in ideas</div>
-              <h1 class="mb-4">Creative Design</h1>
-              <a href="#services" class="btn btn-outline-light">Get Started</a>
-            </div>
-          </div>
-          <div class="hero-carousel-item">
-            <img src="{% static 'img/bg_image_2.jpg' %}" alt="">
-            <div class="img-caption">
-              <h1 class="mb-4">We combine Design, Thinking, and Technical</h1>
-              <a href="#services" class="btn btn-outline-light">Get Started</a>
-              <a href="#services" class="btn btn-primary">See Pricing</a>
-            </div>
-          </div>
-          <div class="hero-carousel-item">
-            <img src="{% static 'img/bg_image_3.jpg' %}" alt="">
-            <div class="img-caption">
-              <div class="subhead">Easy way to build perfect website</div>
-              <h1 class="mb-4">Beautify handcrafted templates for your website</h1>
-              <a href="#services" class="btn btn-primary">Read More</a>
-            </div>
-          </div>
-        </div>
-      </div> <!-- .slider-wrapper -->
-    </div> <!-- .page-banner -->
   </header>
