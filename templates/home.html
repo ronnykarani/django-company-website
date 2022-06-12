@@ -1,7 +1,8 @@
 {% extends 'base/base.html'%}
 {% load static %}
 {% block content %}
-<div class="page-section">
+  <!-- About Section -->  
+  <div class="page-section">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-lg-6 py-3">
@@ -19,13 +20,16 @@
         </div>
       </div>
     </div>
-  </div> <!-- .page-section -->
+  </div> 
+    <!-- About Section -->
 
+
+    <!-- Service Section -->
   <div class="page-section">
     <div class="container">
       <div class="text-center">
         <div class="subhead">Our Services</div>
-        <h2 class="title-section">See what can we do for your Projects</h2>
+        <h2 class="title-section">See what we can offer you and your business</h2>
       </div>
 
       <div class="row justify-content-center">
@@ -34,7 +38,7 @@
             <div class="img-fluid mb-4">
               <img src="{% static 'img/icons/web_development.svg' %}" alt="">
             </div>
-            <h5>Web Development</h5>
+            <h5>Custom Software Development</h5>
           </div>
         </div>
         <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
@@ -42,7 +46,7 @@
             <div class="img-fluid mb-4">
               <img src="{% static 'img/icons/graphics_design.svg' %}" alt="">
             </div>
-            <h5>Graphics Design</h5>
+            <h5>Front & Back End Development</h5>
           </div>
         </div>
 
@@ -51,7 +55,7 @@
             <div class="img-fluid mb-4">
               <img src="{% static 'img/icons/seo_and_marketing.svg' %}" alt="">
             </div>
-            <h5>SEO & Marketing</h5>
+            <h5>Web Hosting</h5>
           </div>
         </div>
 
@@ -60,7 +64,7 @@
             <div class="img-fluid mb-4">
               <img src="{% static 'img/icons/customer_services.svg' %}" alt="">
             </div>
-            <h5>Customer Services</h5>
+            <h5>Ux/Ui Design</h5>
           </div>
         </div>
 
@@ -69,25 +73,7 @@
             <div class="img-fluid mb-4">
               <img src="{% static 'img/icons/app_development.svg' %}" alt="">
             </div>
-            <h5>App Development</h5>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-          <div class="text-center">
-            <div class="img-fluid mb-4">
-              <img src="{% static 'img/icons/ui_ux_design.svg' %}" alt="">
-            </div>
-            <h5>UI/UX Design</h5>
-          </div>
-        </div>
-
-        <div class="col-md-6 col-lg-4 col-xl-3 py-3 mb-3">
-          <div class="text-center">
-            <div class="img-fluid mb-4">
-              <img src="{% static 'img/icons/product_design.svg' %}" alt="">
-            </div>
-            <h5>Product Design</h5>
+            <h5>Mobile App Development</h5>
           </div>
         </div>
 
@@ -96,14 +82,175 @@
             <div class="img-fluid mb-4">
               <img src="{% static 'img/icons/data_analyst.svg' %}" alt="">
             </div>
-            <h5>Data Analyst</h5>
+            <h5>S.E.O & analytics</h5>
           </div>
         </div>
 
       </div>
-    </div> <!-- .container -->
-  </div> <!-- .page-section -->
+    </div> 
+  </div> 
+  <!-- Service Section -->
 
+
+  <!-- Project Section -->
+  <div class="page-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 py-3">
+          <div class="subhead">Portfolio</div>
+          <h2 class="title-section">Our Latest Projects</h2>
+        </div>
+        <div class="col-md-6 py-3 text-md-right">
+          <a href="portfolio.html" class="btn btn-outline-primary">Browse Projects <span class="mai-arrow-forward ml-2"></span></a>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-lg-4 py-3">
+          <div class="portfolio">
+            <a href="{% static 'img/portfolio/work-7.jpg' %}" data-fancybox="portfolio">
+              <img src="{% static 'img/portfolio/work-7.jpg' %}" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 py-3">
+          <div class="portfolio">
+            <a href="{% static 'img/portfolio/work-6.jpg' %}" data-fancybox="portfolio">
+              <img src="{% static 'img/portfolio/work-6.jpg' %}" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 py-3">
+          <div class="portfolio">
+            <a href="{% static 'img/portfolio/work-5.jpg' %}" data-fancybox="portfolio">
+              <img src="{% static 'img/portfolio/work-5.jpg' %}" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 py-3">
+          <div class="portfolio">
+            <a href="{% static 'img/portfolio/work-4.jpg' %}" data-fancybox="portfolio">
+              <img src="{% static 'img/portfolio/work-4.jpg' %}" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 py-3">
+          <div class="portfolio">
+            <a href="{% static 'img/portfolio/work-3.jpg' %}" data-fancybox="portfolio">
+              <img src="{% static 'img/portfolio/work-3.jpg' %}" alt="">
+            </a>
+          </div>
+        </div>
+        <div class="col-lg-4 py-3">
+          <div class="portfolio">
+            <a href="{% static 'img/portfolio/work-2.jpg' %}" data-fancybox="portfolio">
+              <img src="{% static 'img/portfolio/work-2.jpg' %}" alt="">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div> 
+  </div> 
+  <!-- Project Section -->
+
+
+    <!-- Blog Section-->
+    <div class="page-section">
+      <div class="container">
+        <div class="text-center">
+          <div class="subhead">News</div>
+          <h2 class="title-section">Read Our Latest News</h2>
+        </div>
+  
+        <div class="row my-5 card-blog-row">
+          <div class="col-lg-3 py-3">
+            <div class="card-blog">
+              <div class="header">
+                <div class="entry-footer">
+                  <div class="post-author">Sam Newman</div>
+                  <a href="#" class="post-date">23 Apr 2020</a>
+                </div>
+              </div>
+              <div class="body">
+                <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
+              </div>
+              <div class="footer">
+                <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 py-3">
+            <div class="card-blog">
+              <div class="header">
+                <div class="avatar">
+                  <img src="{% static 'img/person/person_1.jpg' %}" alt="">
+                </div>
+                <div class="entry-footer">
+                  <div class="post-author">Sam Newman</div>
+                  <a href="#" class="post-date">23 Apr 2020</a>
+                </div>
+              </div>
+              <div class="body">
+                <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
+                <div class="post-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
+              </div>
+              <div class="footer">
+                <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 py-3">
+            <div class="card-blog">
+              <div class="header">
+                <div class="avatar">
+                  <img src="{% static 'img/person/person_1.jpg' %}" alt="">
+                </div>
+                <div class="entry-footer">
+                  <div class="post-author">Sam Newman</div>
+                  <a href="#" class="post-date">23 Apr 2020</a>
+                </div>
+              </div>
+              <div class="body">
+                <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
+                <div class="post-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
+              </div>
+              <div class="footer">
+                <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 py-3">
+            <div class="card-blog">
+              <div class="header">
+                <div class="avatar">
+                  <img src="{% static 'img/person/person_1.jpg' %}" alt="">
+                </div>
+                <div class="entry-footer">
+                  <div class="post-author">Sam Newman</div>
+                  <a href="#" class="post-date">23 Apr 2020</a>
+                </div>
+              </div>
+              <div class="body">
+                <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
+                <div class="post-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
+              </div>
+              <div class="footer">
+                <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <div class="text-center">
+          <a href="blog.html" class="btn btn-primary">View More</a>
+        </div>
+  
+      </div> 
+    </div>
+    <!-- Blog Section-->
+
+
+  <!-- Team Section -->
   <div class="page-section">
     <div class="container">
       <div class="text-center">
@@ -161,71 +308,17 @@
         </div>
 
       </div>
-    </div> <!-- .container -->
-  </div> <!-- .page-section -->
+    </div> 
+  </div> 
+  <!-- Team Section -->
 
+  <!-- Testimonials Section-->
   <div class="page-section">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-6 py-3">
-          <div class="subhead">Portfolio</div>
-          <h2 class="title-section">Our Latest Projects</h2>
-        </div>
-        <div class="col-md-6 py-3 text-md-right">
-          <a href="portfolio.html" class="btn btn-outline-primary">Browse Projects <span class="mai-arrow-forward ml-2"></span></a>
-        </div>
+      <div class="text-center">
+        <div class="subhead">Testimonials</div>
+        <h2 class="title-section">Client feedback on our service delivery.</h2>
       </div>
-
-      <div class="row mt-3">
-        <div class="col-lg-4 py-3">
-          <div class="portfolio">
-            <a href="{% static 'img/portfolio/work-7.jpg' %}" data-fancybox="portfolio">
-              <img src="{% static 'img/portfolio/work-7.jpg' %}" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-4 py-3">
-          <div class="portfolio">
-            <a href="{% static 'img/portfolio/work-6.jpg' %}" data-fancybox="portfolio">
-              <img src="{% static 'img/portfolio/work-6.jpg' %}" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-4 py-3">
-          <div class="portfolio">
-            <a href="{% static 'img/portfolio/work-5.jpg' %}" data-fancybox="portfolio">
-              <img src="{% static 'img/portfolio/work-5.jpg' %}" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-4 py-3">
-          <div class="portfolio">
-            <a href="{% static 'img/portfolio/work-4.jpg' %}" data-fancybox="portfolio">
-              <img src="{% static 'img/portfolio/work-4.jpg' %}" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-4 py-3">
-          <div class="portfolio">
-            <a href="{% static 'img/portfolio/work-3.jpg' %}" data-fancybox="portfolio">
-              <img src="{% static 'img/portfolio/work-3.jpg' %}" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-4 py-3">
-          <div class="portfolio">
-            <a href="{% static 'img/portfolio/work-2.jpg' %}" data-fancybox="portfolio">
-              <img src="{% static 'img/portfolio/work-2.jpg' %}" alt="">
-            </a>
-          </div>
-        </div>
-      </div>
-    </div> <!-- .container -->
-  </div> <!-- .page-section -->
-
-  <!-- Testimonials -->
-  <div class="page-section">
-    <div class="container">
       <div class="owl-carousel testimonial-carousel">
         <div class="card-testimonial">
           <div class="content">
@@ -318,100 +411,9 @@
         </div>
 
       </div> <!-- .row -->
-    </div> <!-- .container -->
-  </div> <!-- .page-section -->
+    </div> 
+  </div> 
+  <!-- Testimonials Section-->
 
-  <div class="page-section">
-    <div class="container">
-      <div class="text-center">
-        <div class="subhead">News</div>
-        <h2 class="title-section">Read Our Latest News</h2>
-      </div>
-
-      <div class="row my-5 card-blog-row">
-        <div class="col-lg-3 py-3">
-          <div class="card-blog">
-            <div class="header">
-              <div class="entry-footer">
-                <div class="post-author">Sam Newman</div>
-                <a href="#" class="post-date">23 Apr 2020</a>
-              </div>
-            </div>
-            <div class="body">
-              <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
-            </div>
-            <div class="footer">
-              <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 py-3">
-          <div class="card-blog">
-            <div class="header">
-              <div class="avatar">
-                <img src="{% static 'img/person/person_1.jpg' %}" alt="">
-              </div>
-              <div class="entry-footer">
-                <div class="post-author">Sam Newman</div>
-                <a href="#" class="post-date">23 Apr 2020</a>
-              </div>
-            </div>
-            <div class="body">
-              <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
-              <div class="post-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-            </div>
-            <div class="footer">
-              <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 py-3">
-          <div class="card-blog">
-            <div class="header">
-              <div class="avatar">
-                <img src="{% static 'img/person/person_1.jpg' %}" alt="">
-              </div>
-              <div class="entry-footer">
-                <div class="post-author">Sam Newman</div>
-                <a href="#" class="post-date">23 Apr 2020</a>
-              </div>
-            </div>
-            <div class="body">
-              <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
-              <div class="post-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-            </div>
-            <div class="footer">
-              <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 py-3">
-          <div class="card-blog">
-            <div class="header">
-              <div class="avatar">
-                <img src="{% static 'img/person/person_1.jpg' %}" alt="">
-              </div>
-              <div class="entry-footer">
-                <div class="post-author">Sam Newman</div>
-                <a href="#" class="post-date">23 Apr 2020</a>
-              </div>
-            </div>
-            <div class="body">
-              <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
-              <div class="post-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-            </div>
-            <div class="footer">
-              <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="text-center">
-        <a href="blog.html" class="btn btn-primary">View More</a>
-      </div>
-
-    </div> <!-- .container -->
-  </div> <!-- .page-section -->
 
 {% endblock %}
