@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
     {% load static %}
-    <head>
+    <header>
         {% include 'base/header.html' %}
-    </head>
+    </header>
 
-    <body>
+    <main>
         {% include 'base/navbar.html' %}
 
         {% block content %}
@@ -14,5 +14,5 @@
         {% include 'base/footer.html' %}
 
         {% include 'base/js.html' %}
-    </body>
+    </main>
 </html>
