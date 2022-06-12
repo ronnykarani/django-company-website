@@ -1,36 +1,41 @@
 {% extends 'base/base.html'%}
 {% load static %}
 {% block content %}
-<div class="page-banner home-banner mb-5">
-  <div class="slider-wrapper">
-    <div class="owl-carousel hero-carousel">
-      <div class="hero-carousel-item">
-        <img src="{% static 'img/bg_image_1.jpg' %}" alt="">
-        <div class="img-caption">
-          <div class="subhead">We're design studio believe in ideas</div>
-          <h1 class="mb-4">Creative Design</h1>
-          <a href="#services" class="btn btn-outline-light">Get Started</a>
+
+  <!-- Page Banner-->
+  <div class="page-banner home-banner mb-5">
+    <div class="slider-wrapper">
+      <div class="owl-carousel hero-carousel">
+        <div class="hero-carousel-item">
+          <img src="{% static 'img/bg_image_1.jpg' %}" alt="">
+          <div class="img-caption">
+            <div class="subhead">We're design studio believe in ideas</div>
+            <h1 class="mb-4">Creative Design</h1>
+            <a href="#services" class="btn btn-outline-light">Get Started</a>
+          </div>
         </div>
-      </div>
-      <div class="hero-carousel-item">
-        <img src="{% static 'img/bg_image_2.jpg' %}" alt="">
-        <div class="img-caption">
-          <h1 class="mb-4">We combine Design, Thinking, and Technical</h1>
-          <a href="#services" class="btn btn-outline-light">Get Started</a>
-          <a href="#services" class="btn btn-primary">See Pricing</a>
+        <div class="hero-carousel-item">
+          <img src="{% static 'img/bg_image_2.jpg' %}" alt="">
+          <div class="img-caption">
+            <h1 class="mb-4">We combine Design, Thinking, and Technical</h1>
+            <a href="#services" class="btn btn-outline-light">Get Started</a>
+            <a href="#services" class="btn btn-primary">See Pricing</a>
+          </div>
         </div>
-      </div>
-      <div class="hero-carousel-item">
-        <img src="{% static 'img/bg_image_3.jpg' %}" alt="">
-        <div class="img-caption">
-          <div class="subhead">Easy way to build perfect website</div>
-          <h1 class="mb-4">Beautify handcrafted templates for your website</h1>
-          <a href="#services" class="btn btn-primary">Read More</a>
+        <div class="hero-carousel-item">
+          <img src="{% static 'img/bg_image_3.jpg' %}" alt="">
+          <div class="img-caption">
+            <div class="subhead">Easy way to build perfect website</div>
+            <h1 class="mb-4">Beautify handcrafted templates for your website</h1>
+            <a href="#services" class="btn btn-primary">Read More</a>
+          </div>
         </div>
       </div>
     </div>
-  </div> <!-- .slider-wrapper -->
-</div> <!-- .page-banner -->
+  </div> 
+  <!-- Page Banner -->
+
+
   <!-- About Section -->  
   <div class="page-section">
     <div class="container">
@@ -193,82 +198,29 @@
       </div>
 
       <div class="row my-5 card-blog-row">
+        {% if posts %}
+        {% for post in posts %}
         <div class="col-lg-3 py-3">
           <div class="card-blog">
             <div class="header">
               <div class="entry-footer">
-                <div class="post-author">Sam Newman</div>
-                <a href="#" class="post-date">23 Apr 2020</a>
+                <div class="post-author">{{ post.author }}</div>
+                <a href="#" class="post-date">{{ post.published_date }}</a>
               </div>
             </div>
             <div class="body">
-              <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
+              <div class="post-title"><a href="#">{{ post.title }}</a></div>
+              <div class="post-excerpt">{{ post.text|safe|truncatewords:20 }}.</div>
             </div>
             <div class="footer">
               <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
             </div>
           </div>
         </div>
-        <div class="col-lg-3 py-3">
-          <div class="card-blog">
-            <div class="header">
-              <div class="avatar">
-                <img src="{% static 'img/person/person_1.jpg' %}" alt="">
-              </div>
-              <div class="entry-footer">
-                <div class="post-author">Sam Newman</div>
-                <a href="#" class="post-date">23 Apr 2020</a>
-              </div>
-            </div>
-            <div class="body">
-              <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
-              <div class="post-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-            </div>
-            <div class="footer">
-              <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 py-3">
-          <div class="card-blog">
-            <div class="header">
-              <div class="avatar">
-                <img src="{% static 'img/person/person_1.jpg' %}" alt="">
-              </div>
-              <div class="entry-footer">
-                <div class="post-author">Sam Newman</div>
-                <a href="#" class="post-date">23 Apr 2020</a>
-              </div>
-            </div>
-            <div class="body">
-              <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
-              <div class="post-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-            </div>
-            <div class="footer">
-              <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-3 py-3">
-          <div class="card-blog">
-            <div class="header">
-              <div class="avatar">
-                <img src="{% static 'img/person/person_1.jpg' %}" alt="">
-              </div>
-              <div class="entry-footer">
-                <div class="post-author">Sam Newman</div>
-                <a href="#" class="post-date">23 Apr 2020</a>
-              </div>
-            </div>
-            <div class="body">
-              <div class="post-title"><a href="blog-single.html">What is Business Management?</a></div>
-              <div class="post-excerpt">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</div>
-            </div>
-            <div class="footer">
-              <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
+        {% else %}
+        <h2 class = "text-center text-danger">No posts yet!</h2>
+        {% endif %}
       </div>
 
       <div class="text-center">
