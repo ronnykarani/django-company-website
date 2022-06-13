@@ -197,9 +197,9 @@
         <h2 class="title-section">Read our latest posts</h2>
       </div>
 
+      {% if posts %}
+      {% for post in posts %}
       <div class="row my-5 card-blog-row">
-        {% if posts %}
-        {% for post in posts %}
         <div class="col-lg-3 py-3">
           <div class="card-blog">
             <div class="header">
@@ -209,22 +209,22 @@
               </div>
             </div>
             <div class="body">
-              <div class="post-title"><a href="#">{{ post.title }}</a></div>
+              <div class="post-title"><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></div>
               <div class="post-excerpt">{{ post.text|safe|truncatewords:20 }}.</div>
             </div>
             <div class="footer">
-              <a href="blog-single.html">Read More <span class="mai-chevron-forward text-sm"></span></a>
+              <a href="{% url 'post_detail' post.id %}">Read More <span class="mai-chevron-forward text-sm"></span></a>
             </div>
           </div>
         </div>
-        {% endfor %}
-        {% else %}
-        <h2 class = "text-center text-danger">No posts yet!</h2>
-        {% endif %}
       </div>
+      {% endfor %}
+      {% else %}
+      <h2 class = "text-center text-danger">No posts yet!</h2>
+      {% endif %}
 
       <div class="text-center">
-        <a href="blog.html" class="btn btn-primary">View More</a>
+        <a href="{% url 'blog' %}" class="btn btn-primary">View More</a>
       </div>
 
     </div> 

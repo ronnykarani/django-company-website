@@ -2,8 +2,8 @@
 {% load static%}
 {% block content %}
 
-   <!-- Single Blog Section -->
-<div class="page-section pt-4">
+  <!-- Single Blog Section -->
+  <div class="page-section pt-4">
     <div class="container">
       <nav aria-label="Breadcrumb">
         <ol class="breadcrumb bg-transparent mb-4">
@@ -12,20 +12,23 @@
           <li class="breadcrumb-item active" aria-current="page">How to growth your Business with scalable Employee</li>
         </ol>
       </nav>
+
+
       <div class="row">
+        {% if post.published_date %}
         <div class="col-lg-8">
           <div class="blog-single-wrap">
             <div class="post-thumbnail">
-              <img src="../assets/img/bg_image_1.jpg" alt="">
+              <img src="{% static 'img/bg_image_1.jpg' %}" alt="">
             </div>
-            <h1 class="post-title">How to growth your Business with scalable Employee</h1>
+            <h1 class="post-title">{{ post.title }}</h1>
             <div class="post-meta">
               <div class="post-author">
-                <span class="text-grey">By</span> <a href="#">Admin</a>  
+                <span class="text-grey">By</span> <a href="#">{{ post.author }}</a>  
               </div>
               <span class="gap">|</span>
               <div class="post-date">
-                <a href="#">22 Jan, 2018</a>
+                <a href="#">{{ post.published_date }}</a>
               </div>
               <span class="gap">|</span>
               <div>
@@ -37,9 +40,7 @@
               </div>
             </div>
             <div class="post-content">
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident, magnam aliquam sit tempora atque numquam, porro autem eius in odio quos nisi sequi doloribus, quo ipsam labore corrupti mollitia! Quos.</p>
-              <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit voluptatum dolor, nemo optio voluptatibus, distinctio obcaecati repudiandae recusandae sint sunt neque dignissimos reiciendis voluptates voluptate quibusdam temporibus, amet molestiae hic?</p>
-              <p>Praesent vel mi bibendum, finibus leo ac, condimentum arcu. Pellentesque sem ex, tristique sit amet suscipit in, mattis imperdiet enim. Integer tempus justo nec velit fringilla, eget eleifend neque blandit. Sed tempor magna sed congue auctor. Mauris eu turpis eget tortor ultricies elementum. Phasellus vel placerat orci, a venenatis justo. Phasellus faucibus venenatis nisl vitae vestibulum. Praesent id nibh arcu. Vivamus sagittis accumsan felis, quis vulputate</p>
+              <p>{{ post.text|linebreaksbr }}</p>
               <div class="post-tags">
                 <p class="mb-2">Tags:</p>
                 <a href="#" class="tag-link">LifeStyle</a>
@@ -78,7 +79,7 @@
             </form>
           </div> <!-- .comment-form-wrap -->
         </div>
-        
+        {% endif %}
         <div class="col-lg-4">
           <div class="widget">
             <div class="widget-box">
