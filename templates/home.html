@@ -6,28 +6,22 @@
   <div class="page-banner home-banner mb-5">
     <div class="slider-wrapper">
       <div class="owl-carousel hero-carousel">
-        <div class="hero-carousel-item">
-          <img src="{% static 'img/bg_image_1.jpg' %}" alt="">
-          <div class="img-caption">
-            <div class="subhead">We're design studio believe in ideas</div>
-            <h1 class="mb-4">Creative Design</h1>
-            <a href="#services" class="btn btn-outline-light">Get Started</a>
-          </div>
-        </div>
+        
         <div class="hero-carousel-item">
           <img src="{% static 'img/bg_image_2.jpg' %}" alt="">
           <div class="img-caption">
             <h1 class="mb-4">We combine Design, Thinking, and Technical</h1>
-            <a href="#services" class="btn btn-outline-light">Get Started</a>
-            <a href="#services" class="btn btn-primary">See Pricing</a>
+            <a href="#services" class="btn btn-outline-light">Get Quotation</a>
+            <a href="{% url 'contact' %}" class="btn btn-primary">Contact Us</a>
           </div>
         </div>
+
         <div class="hero-carousel-item">
           <img src="{% static 'img/bg_image_3.jpg' %}" alt="">
           <div class="img-caption">
-            <div class="subhead">Easy way to build perfect website</div>
-            <h1 class="mb-4">Beautify handcrafted templates for your website</h1>
-            <a href="#services" class="btn btn-primary">Read More</a>
+            <h1 class="mb-4">We combine Design, Thinking, and Technical</h1>
+            <a href="#services" class="btn btn-outline-light">Get Quotation</a>
+            <a href="{% url 'contact' %}" class="btn btn-primary">Contact Us</a>
           </div>
         </div>
       </div>
@@ -136,53 +130,24 @@
           <h2 class="title-section">Our latest projects</h2>
         </div>
         <div class="col-md-6 py-3 text-md-right">
-          <a href="portfolio.html" class="btn btn-outline-primary">Browse Projects <span class="mai-arrow-forward ml-2"></span></a>
+          <a href="{% url 'project' %}" class="btn btn-outline-primary">Browse Projects <span class="mai-arrow-forward ml-2"></span></a>
         </div>
       </div>
 
       <div class="row mt-3">
         <div class="col-lg-4 py-3">
+          {% if projects %}
+          {% for project in projects %}
           <div class="portfolio">
             <a href="{% static 'img/portfolio/work-7.jpg' %}" data-fancybox="portfolio">
               <img src="{% static 'img/portfolio/work-7.jpg' %}" alt="">
             </a>
           </div>
-        </div>
-        <div class="col-lg-4 py-3">
-          <div class="portfolio">
-            <a href="{% static 'img/portfolio/work-6.jpg' %}" data-fancybox="portfolio">
-              <img src="{% static 'img/portfolio/work-6.jpg' %}" alt="">
-            </a>
+          {% endfor %}
+          {% else %}
+          <h2 class = "text-center text-danger">No projects yet!</h2>
+          {% endif %}
           </div>
-        </div>
-        <div class="col-lg-4 py-3">
-          <div class="portfolio">
-            <a href="{% static 'img/portfolio/work-5.jpg' %}" data-fancybox="portfolio">
-              <img src="{% static 'img/portfolio/work-5.jpg' %}" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-4 py-3">
-          <div class="portfolio">
-            <a href="{% static 'img/portfolio/work-4.jpg' %}" data-fancybox="portfolio">
-              <img src="{% static 'img/portfolio/work-4.jpg' %}" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-4 py-3">
-          <div class="portfolio">
-            <a href="{% static 'img/portfolio/work-3.jpg' %}" data-fancybox="portfolio">
-              <img src="{% static 'img/portfolio/work-3.jpg' %}" alt="">
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-4 py-3">
-          <div class="portfolio">
-            <a href="{% static 'img/portfolio/work-2.jpg' %}" data-fancybox="portfolio">
-              <img src="{% static 'img/portfolio/work-2.jpg' %}" alt="">
-            </a>
-          </div>
-        </div>
       </div>
     </div> 
   </div> 
@@ -197,9 +162,10 @@
         <h2 class="title-section">Read our latest posts</h2>
       </div>
 
-      {% if posts %}
-      {% for post in posts %}
+      
       <div class="row my-5 card-blog-row">
+        {% if posts %}
+        {% for post in posts %}
         <div class="col-lg-3 py-3">
           <div class="card-blog">
             <div class="header">
@@ -217,11 +183,12 @@
             </div>
           </div>
         </div>
+        {% endfor %}
+        {% else %}
+        <h2 class = "text-center text-danger">No posts yet!</h2>
+        {% endif %}
       </div>
-      {% endfor %}
-      {% else %}
-      <h2 class = "text-center text-danger">No posts yet!</h2>
-      {% endif %}
+      
 
       <div class="text-center">
         <a href="{% url 'blog' %}" class="btn btn-primary">View More</a>

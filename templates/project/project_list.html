@@ -1,0 +1,51 @@
+{% extends 'base/base.html'%}
+{% load static%}
+{% block content %}
+<div class="page-banner bg-img bg-img-parallax overlay-dark" style="background-image: url(../static/img/bg_image_3.jpg);">
+    <div class="container h-100">
+      <div class="row justify-content-center align-items-center h-100">
+        <div class="col-lg-8">
+          <nav aria-label="breadcrumb">
+            <ol class="breadcrumb breadcrumb-dark bg-transparent justify-content-center py-0">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Projects</li>
+            </ol>
+          </nav>
+          <h1 class="fg-white text-center">Projects Completed</h1>
+        </div>
+      </div>
+    </div>
+  </div> <!-- .page-banner -->
+
+<div class="page-section">
+    <div class="container">
+      <div class="filterable-btn">
+        <button class="btn active" data-filter="*">All</button>
+        <button class="btn" data-filter=".web">Website</button>
+        <button class="btn" data-filter=".mobile">Mobile</button>
+        <button class="btn" data-filter=".desktop">Desktop</button>
+      </div>
+
+      <div class="grid mt-3">
+        <div class="grid-item mobile">
+          {% if posts %}
+          {% for post in posts %}
+          <div class="portfolio">
+            <a href="{{ post.photo.url }}" data-fancybox="portfolio">
+              <img src="{{ post.photo.url }}" alt="">
+            </a>
+          </div>
+          {% endfor %}
+          {% else %}
+          <h2 class = "text-center text-danger">No projects yet!</h2>
+          {% endif %}
+        </div>
+      </div> <!-- .grid -->
+
+      <div class="mt-5 text-center">
+        <button class="btn btn-primary">Load More</button>
+      </div>
+    </div> <!-- .container -->
+  </div> <!-- .page-section -->
+
+{% endblock content %}
