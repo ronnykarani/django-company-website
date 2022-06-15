@@ -139,8 +139,8 @@
         {% for project in projects %}
         <div class="col-lg-4 py-3">
           <div class="portfolio">
-            <a href="{% static 'img/portfolio/work-7.jpg' %}" data-fancybox="portfolio">
-              <img src="{% static 'img/portfolio/work-7.jpg' %}" alt="">
+            <a href="{{ project.photo.url }}" data-fancybox="portfolio">
+              <img src="{{ project.photo.url }}" alt="">
             </a>
           </div>
         </div>
@@ -208,13 +208,16 @@
       </div>
 
       <div class="owl-carousel team-carousel mt-5">
+        {% if teams %}
+        {% for team in teams %}
         <div class="team-wrap">
           <div class="team-profile">
-            <img src="{% static 'img/teams/team_2.jpg' %}" alt="">
+            <img src="{{ team.photo.url }}" alt="">
           </div>
           <div class="team-content">
-            <h5>Walter White</h5>
-            <div class="text-sm fg-grey">Chief Executive Officer</div>
+            <h5>{{ team.name }}</h5>
+            <div class="text-sm fg-grey">{{ team.job }}</div>
+            <p>{{ team.description }}</p>
 
             <div class="social-button">
               <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
@@ -223,38 +226,10 @@
             </div>
           </div>
         </div>
-
-        <div class="team-wrap">
-          <div class="team-profile">
-            <img src="{% static 'img/teams/team_2.jpg' %}" alt="">
-          </div>
-          <div class="team-content">
-            <h5>Sarah Johanson</h5>
-            <div class="text-sm fg-grey">Chief Technology Officer</div>
-
-            <div class="social-button">
-              <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
-              <a href="#"><span class="mai-call"></span></a>
-              <a href="#"><span class="mai-mail"></span></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="team-wrap">
-          <div class="team-profile">
-            <img src="{% static 'img/teams/team_3.jpg' %}" alt="">
-          </div>
-          <div class="team-content">
-            <h5>Anna Anderson</h5>
-            <div class="text-sm fg-grey">Product Manager</div>
-
-            <div class="social-button">
-              <a href="#"><span class="mai-logo-facebook-messenger"></span></a>
-              <a href="#"><span class="mai-call"></span></a>
-              <a href="#"><span class="mai-mail"></span></a>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
+        {% else %}
+        <h2 class = "text-center text-danger">No Team at the moment.</h2>
+        {% endif %}
 
       </div>
     </div> 
@@ -283,82 +258,6 @@
             </div>
           </div>
         </div>
-
-        <div class="card-testimonial">
-          <div class="content">
-            The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
-          </div>
-          <div class="author">
-            <div class="avatar">
-              <img src="{% static 'img/person/person_2.jpg' %}" alt="">
-            </div>
-            <div class="d-inline-block ml-2">
-              <div class="author-name">Edinson Alfa</div>
-              <div class="author-info">CEO - Mosh Elite Ltd.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-testimonial">
-          <div class="content">
-            The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
-          </div>
-          <div class="author">
-            <div class="avatar">
-              <img src="{% static 'img/person/person_3.jpg' %}" alt="">
-            </div>
-            <div class="d-inline-block ml-2">
-              <div class="author-name">May Halloway</div>
-              <div class="author-info">CEO - Mosh Elite Ltd.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-testimonial">
-          <div class="content">
-            The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
-          </div>
-          <div class="author">
-            <div class="avatar">
-              <img src="{% static 'img/person/person_1.jpg' %}" alt="">
-            </div>
-            <div class="d-inline-block ml-2">
-              <div class="author-name">Sam Watson</div>
-              <div class="author-info">CEO - Mosh Elite Ltd.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-testimonial">
-          <div class="content">
-            The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
-          </div>
-          <div class="author">
-            <div class="avatar">
-              <img src="{% static 'img/person/person_2.jpg' %}" alt="">
-            </div>
-            <div class="d-inline-block ml-2">
-              <div class="author-name">Edinson Alfa</div>
-              <div class="author-info">CEO - Mosh Elite Ltd.</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="card-testimonial">
-          <div class="content">
-            The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
-          </div>
-          <div class="author">
-            <div class="avatar">
-              <img src="{% static 'img/person/person_3.jpg' %}" alt="">
-            </div>
-            <div class="d-inline-block ml-2">
-              <div class="author-name">May Halloway</div>
-              <div class="author-info">CEO - Mosh Elite Ltd.</div>
-            </div>
-          </div>
-        </div>
-
       </div> <!-- .row -->
     </div> 
   </div> 
