@@ -135,19 +135,19 @@
       </div>
 
       <div class="row mt-3">
+        {% if projects %}
+        {% for project in projects %}
         <div class="col-lg-4 py-3">
-          {% if projects %}
-          {% for project in projects %}
           <div class="portfolio">
             <a href="{% static 'img/portfolio/work-7.jpg' %}" data-fancybox="portfolio">
               <img src="{% static 'img/portfolio/work-7.jpg' %}" alt="">
             </a>
           </div>
-          {% endfor %}
-          {% else %}
-          <h2 class = "text-center text-danger">No projects yet!</h2>
-          {% endif %}
-          </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <h2 class = "text-center text-danger">No projects yet!</h2>
+        {% endif %}
       </div>
     </div> 
   </div> 

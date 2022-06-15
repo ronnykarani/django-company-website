@@ -27,24 +27,40 @@
       </div>
 
       <div class="grid mt-3">
+        {% if projects %}
+        {% for project in projects %}
         <div class="grid-item mobile">
-          {% if projects %}
-          {% for project in projects %}
           <div class="portfolio">
             <a href="{{ project.photo.url }}" data-fancybox="portfolio">
               <img src="{{ project.photo.url }}" alt="">
             </a>
           </div>
-          {% endfor %}
-          {% else %}
-          <h2 class = "text-center text-danger">No projects yet!</h2>
-          {% endif %}
         </div>
+        {% endfor %}
+        {% else %}
+        <h2 class = "text-center text-danger">No projects yet!</h2>
+        {% endif %}
       </div> <!-- .grid -->
 
-      <div class="mt-5 text-center">
-        <button class="btn btn-primary">Load More</button>
-      </div>
+      <div class="col-12 my-5">
+        <nav aria-label="Page Navigation">
+            <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+            </li>
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="#">2</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">Next</a>
+            </li>
+            </ul>
+        </nav>
+    </div>
     </div> <!-- .container -->
   </div> <!-- .page-section -->
 
