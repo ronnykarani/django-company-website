@@ -28,11 +28,11 @@
 
       <div class="grid mt-3">
         <div class="grid-item mobile">
-          {% if posts %}
-          {% for post in posts %}
+          {% if projects %}
+          {% for project in projects %}
           <div class="portfolio">
-            <a href="{{ post.photo.url }}" data-fancybox="portfolio">
-              <img src="{{ post.photo.url }}" alt="">
+            <a href="{{ project.photo.url }}" data-fancybox="portfolio">
+              <img src="{{ project.photo.url }}" alt="">
             </a>
           </div>
           {% endfor %}
