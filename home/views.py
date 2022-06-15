@@ -5,7 +5,7 @@ from django.contrib import messages
 from django.core.mail import send_mail
 from project.models import Project
 from home.models import Team
-
+from home.models import Testimony
 
 
 # Create your views here.
@@ -13,7 +13,8 @@ def home(request):
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('-id')
     projects = Project.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
     teams = Team.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    context = {'posts': posts, 'projects':projects, 'teams':teams}
+    testimonys = Testimony.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
+    context = {'posts': posts, 'projects':projects, 'teams':teams, 'testimonys':testimonys}
     return render(request, 'home.html', context)
 
 

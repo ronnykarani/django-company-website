@@ -244,20 +244,26 @@
         <h2 class="title-section">Client feedback on our service delivery.</h2>
       </div>
       <div class="owl-carousel testimonial-carousel">
+        {% if testimonys %}
+        {% for testimony in testimonys %}
         <div class="card-testimonial">
-          <div class="content">
-            The quick, brown fox jumps over a lazy dog. DJs flock by when MTV ax quiz prog. Junk MTV quiz graced by fox whelps. Bawds jog, flick quartz, vex nymphs. Waltz, bad nymph
-          </div>
           <div class="author">
             <div class="avatar">
-              <img src="{% static 'img/person/person_1.jpg' %}" alt="">
+              <img src="{{testimony.photo.url}}" alt="">
             </div>
+            <br>
             <div class="d-inline-block ml-2">
-              <div class="author-name">Sam Watson</div>
-              <div class="author-info">CEO - Mosh Elite Ltd.</div>
+              <div class="author-name">{{testimony.name}}</div>
+              <div class="author-info">{{testimony.job}}</div>
             </div>
           </div>
+          <div class="content">{{testimony.text}}</div>
         </div>
+        {% endfor %}
+        {% else %}
+        <h2 class = "text-center text-danger">No testimonies at the moment.</h2>
+        {% endif %}
+
       </div> <!-- .row -->
     </div> 
   </div> 
