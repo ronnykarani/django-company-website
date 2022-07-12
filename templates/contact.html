@@ -1,6 +1,7 @@
 {% extends 'base/base.html'%}
 {% load static%}
 {% block content %}
+
 <div class="page-banner bg-img bg-img-parallax overlay-dark" style="background-image: url(../static/img/bg_image_3.jpg);">
   <div class="container h-100">
     <div class="row justify-content-center align-items-center h-100">
@@ -16,6 +17,7 @@
     </div>
   </div>
 </div> <!-- .page-banner -->
+
 <div class="page-section">
       <div class="container">
         <div class="text-center">
@@ -24,23 +26,24 @@
         </div>
         <div class="row justify-content-center mt-5">
           <div class="col-lg-8">
-            <form action="#" class="form-contact">
+            <form action="{% url 'contact' %}" method="post" class="form-contact">
+              {% csrf_token %}
               <div class="row">
                 <div class="col-sm-6 py-2">
                   <label for="name" class="fg-grey">Name</label>
-                  <input type="text" class="form-control" id="name" placeholder="Enter name..">
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Enter name..">
                 </div>
                 <div class="col-sm-6 py-2">
                   <label for="email" class="fg-grey">Email</label>
-                  <input type="text" class="form-control" id="email" placeholder="Email address..">
+                  <input type="text" class="form-control" id="email" name="email" placeholder="Email address..">
                 </div>
                 <div class="col-12 py-2">
                   <label for="subject" class="fg-grey">Subject</label>
-                  <input type="text" class="form-control" id="subject" placeholder="Subject..">
+                  <input type="text" class="form-control" id="subject" name="subject" placeholder="Subject..">
                 </div>
                 <div class="col-12 py-2">
                   <label for="message" class="fg-grey">Message</label>
-                  <textarea id="message" rows="8" class="form-control" placeholder="Enter message.."></textarea>
+                  <textarea id="message" name="message" rows="8" class="form-control" placeholder="Enter message.."></textarea>
                 </div>
                 <div class="col-12 mt-3">
                   <button type="submit" class="btn btn-primary px-5">Submit</button>

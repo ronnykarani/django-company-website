@@ -6,6 +6,8 @@ from django.core.mail import send_mail
 from project.models import Project
 from home.models import Team
 from home.models import Testimony
+from django.contrib import messages
+from django.core.mail import send_mail
 
 
 # Create your views here.
@@ -19,5 +21,28 @@ def home(request):
 
 
 def contact(request):
-    return render(request, 'contact.html', {})
+    if request.method == "POST":
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        
+        #send Email
+        send_mail(
+            #subject
+            'New Message from ' + name,
+            #message
+            subject,
+            #message
+            message,
+            #from Email
+            email,
+            #to Email
+            [''],
+        )
+        
+        #messages.success(request, 'Your message has been sent!')
+        return render(request, 'contact.html', {'name': name})
+    else:
+        return render(request, 'contact.html', {})
 
